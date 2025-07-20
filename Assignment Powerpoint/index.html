@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang = "en">
-
+<html lang="en">
 <head>
-<meta charset="UTF=8">
-<title> Image Slideshow</title>
-<link rel = "stylesheet" href = "style.css">
-
+  <meta charset="UTF-8">
+  <title>Image Slideshow</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div class = "slideshow-container">
-<img id = "slide" src = "images/img1.jpg" alt = "Slideshow Image">
-<div class = "controls">
-<button onclick = "prevImage()">Previous</button>
-<button onclick = "nextImage()">Next</button>
-</div>
 
-</div>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+    
+    <!-- Image that will be changed by JavaScript -->
+    <img id="slide" src="images/img1.jpg" alt="Slideshow Image">
+    
+    <!-- Buttons for navigation -->
+    <div class="controls">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
 
-<script src = "script.js"></script>
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,15 +1,18 @@
+/* General Body Styling */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #bfbfbf;
 }
 
+/* Slideshow Container Styling */
 .slideshow-container {
   max-width: 600px;
   margin: 50px auto;
   position: relative;
 }
 
+/* Image Styling */
 #slide {
   width: 100%;
   height: auto;
@@ -17,10 +20,12 @@ body {
   box-shadow: 0 0 10px rgba(238, 237, 237, 0.3);
 }
 
+/* Button Container Styling */
 .controls {
   margin-top: 10px;
 }
 
+/* Button Styling */
 button {
   padding: 10px 20px;
   font-size: 16px;
