@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List App</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Movie List App</h2>
+        <!-- Input field for entering movie titles -->
+        <input type="text" id="movieInput" placeholder="Enter movie title">
+        <br>
+        <!-- Action buttons -->
+        <button onclick="addMovie()">Add Movie</button>
+        <button onclick="displayMovies()">Display List</button>
+        <button onclick="displayMoviesPopup()">Display in New Window</button>
+        <button onclick="resetMovies()">Reset</button>
+        
+        <!-- Area to display the list on the same page -->
+        <div id="movieDisplay"></div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
