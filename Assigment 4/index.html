@@ -1,190 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Setup Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Setup Form</title>
 
-<style>
-    /* =====================
-       General Page Styling
-       ===================== */
-    body {
-        font-family: Arial, sans-serif;
-        background: #1e1e1e;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    /* Container for form and output */
-    .container {
-        width: 90%;
-        max-width: 450px;
-        background: #292929;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.6);
-    }
-
-    h1 {
-        text-align: center;
-        color: #00d4ff;
-        margin-bottom: 20px;
-    }
-
-    /* =====================
-       Form Styling
-       ===================== */
-    label {
-        display: block;
-        margin: 10px 0 5px;
-        font-weight: bold;
-    }
-
-    input[type="text"], input[type="number"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    /* Button styling */
-    .btn-container {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    button {
-        flex: 1;
-        margin: 5px;
-        padding: 12px;
-        background: #00d4ff;
-        color: #000;
-        font-weight: bold;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-
-    button:hover {
-        background: #00aacc;
-    }
-
-    /* =====================
-       Output Area Styling
-       ===================== */
-    #output {
-        margin-top: 20px;
-        background: #121212;
-        padding: 15px;
-        border-radius: 5px;
-        border: 1px solid #333;
-    }
-
-    #output h3 {
-        margin-bottom: 10px;
-        color: #00d4ff;
-    }
-
-    #result {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    /* =====================
-       Responsive Design
-       ===================== */
-    @media screen and (max-width: 500px) {
-        button {
-            font-size: 14px;
-            padding: 10px;
-        }
-    }
-</style>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Page Header -->
+        <!-- Page Heading -->
         <h1>Game Setup</h1>
 
         <!-- Game Form -->
         <form id="gameForm">
-            <!-- Username Input -->
+            <!-- Username input -->
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Enter your username" required>
 
-            <!-- Weapons Input -->
+            <!-- Weapons input -->
             <label for="weapons">Weapons:</label>
             <input type="text" id="weapons" placeholder="Choose your weapon" required>
 
-            <!-- Health/Damage Input -->
+            <!-- Health/Damage input -->
             <label for="health">Health/Damage:</label>
             <input type="number" id="health" placeholder="Enter health points" required>
 
-            <!-- Point Total Input -->
+            <!-- Point Total input -->
             <label for="points">Point Total:</label>
             <input type="number" id="points" placeholder="Enter starting points" required>
 
             <!-- Buttons -->
             <div class="btn-container">
+                <!-- Submit button triggers JS function -->
                 <button type="button" onclick="submitForm()">Submit</button>
+                <!-- Reset button clears form and output -->
                 <button type="reset" onclick="clearOutput()">Reset</button>
             </div>
         </form>
 
-        <!-- Output Area -->
+        <!-- Output area for displaying user input -->
         <div id="output">
             <h3>Game Info:</h3>
             <p id="result">No data entered yet.</p>
         </div>
     </div>
 
-<script>
-    /**
-     * Function to capture user input from form fields
-     * and display them in the output area.
-     */
-    function submitForm() {
-        // Get values from the form fields
-        const username = document.getElementById('username').value;
-        const weapons = document.getElementById('weapons').value;
-        const health = document.getElementById('health').value;
-        const points = document.getElementById('points').value;
-
-        // Validate input (basic check)
-        if (!username || !weapons || !health || !points) {
-            alert('Please fill in all fields before submitting.');
-            return;
-        }
-
-        // Create formatted result text
-        const resultText = `
-            <strong>User Name:</strong> ${username}<br>
-            <strong>Weapons:</strong> ${weapons}<br>
-            <strong>Health/Damage:</strong> ${health}<br>
-            <strong>Point Total:</strong> ${points}
-        `;
-
-        // Display the result
-        document.getElementById('result').innerHTML = resultText;
-    }
-
-    /**
-     * Function to clear the output area
-     * when the Reset button is clicked.
-     */
-    function clearOutput() {
-        document.getElementById('result').innerHTML = 'No data entered yet.';
-    }
-</script>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+/* =====================
+   General Page Styling
+   ===================== */
+body {
+    font-family: Arial, sans-serif;
+    background: #1e1e1e; /* Dark background for game-like vibe */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for form and output */
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Page heading */
+h1 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button container for Submit & Reset */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
+button {
+    flex: 1;
+    margin: 5px;
+    padding: 12px;
+    background: #00d4ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #00aacc;
+}
+
+/* Output display area */
+#output {
+    margin-top: 20px;
+    background: #121212;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+#output h3 {
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 500px) {
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
