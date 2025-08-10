@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkers — W10 Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header & basic controls -->
+  <header class="site-header">
+    <h1>Checkers</h1>
+    <p class="subtitle">W10 — Designing Website Interfaces</p>
+  </header>
+
+  <main class="app">
+    <section class="left">
+      <!-- Game controls and status -->
+      <div class="controls">
+        <div class="control-row">
+          <button id="resetBtn" aria-label="Reset game">Reset Game</button>
+          <label class="toggle">
+            <input type="checkbox" id="advancedToggle" />
+            <span>Advanced Moves (captures + kinging)</span>
+          </label>
+        </div>
+        <div id="status" class="status" aria-live="polite">
+          Turn: <strong id="turnLabel">Red</strong>
+        </div>
+      </div>
+
+      <!-- Checkerboard container -->
+      <div id="board" class="board" role="grid" aria-label="Checkers board"></div>
+
+      <p class="note">
+        Tip: Click a piece of the current turn to see legal moves. Click a highlighted square to move.
+      </p>
+    </section>
+
+    <!-- Move history & help -->
+    <aside class="right">
+      <div class="panel">
+        <h2>Move History</h2>
+        <ol id="history" class="history" aria-live="polite"></ol>
+      </div>
+
+      <div class="panel">
+        <h2>How it works</h2>
+        <ul class="help">
+          <li>Base mode: one-square diagonal moves only.</li>
+          <li>Turn-based: Red goes first, then Black.</li>
+          <li>Toggle “Advanced Moves” to enable captures and kinging.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>Built for class — clean structure, comments, and accessibility in mind.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
