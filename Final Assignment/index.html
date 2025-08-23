@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillSwap Hub</title>
+
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header section with site title -->
+  <header>
+    <h1>SkillSwap Hub</h1>
+    <p>Connect. Learn. Grow.</p>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <section id="profile-section">
+      <h2>Set Up Your Profile</h2>
+
+      <!-- Profile form for user input -->
+      <form id="profileForm">
+        <!-- Name field -->
+        <label>Name:
+          <input type="text" id="name" required placeholder="Your name here" />
+        </label>
+
+        <!-- Role/Title field -->
+        <label>Role:
+          <input type="text" id="role" placeholder="e.g., Web Developer, Artist, etc." />
+        </label>
+
+        <!-- Skills offered field -->
+        <label>Skills Offered (comma separated):
+          <input type="text" id="skillsOffered" placeholder="JavaScript, Python" />
+        </label>
+
+        <!-- Skills wanted field -->
+        <label>Skills Wanted (comma separated):
+          <input type="text" id="skillsWanted" placeholder="UX Design, SQL" />
+        </label>
+
+        <!-- Weekly availability selector -->
+        <fieldset>
+          <legend>Select Your Weekly Availability</legend>
+          <div id="availability">
+            <!-- Schedule checkboxes will be rendered here by JS -->
+          </div>
+        </fieldset>
+
+        <!-- Form submission button -->
+        <button type="submit">Save Profile</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer with copyright info -->
+  <footer>
+    <p>© <span id="year"></span> SkillSwap Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript files (modular approach) -->
+  <script type="module" src="js/utils.js"></script>
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/schedule.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+  <!-- JavaScript to dynamically update the year in the footer -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
