@@ -1,28 +1,29 @@
-// utils.js — General utility functions
+// utils.js - Contains reusable helper functions
 
-console.log("Utils loaded");
-
-// Convert a comma-separated string into a trimmed, non-empty array
-export function csvToArray(str) {
-  return str.split(",")
-    .map(s => s.trim())
-    .filter(Boolean);
+/**
+ * Capitalize the first letter of every word
+ * @param {string} str
+ * @returns {string}
+ */
+function capitalizeWords(str) {
+  return str.replace(/\b\w/g, c => c.toUpperCase());
 }
 
-// DOM selector shortcut
-export const $ = (selector) => document.querySelector(selector);
-export const $$ = (selector) => Array.from(document.querySelectorAll(selector));
-
-// LocalStorage save/load functions
-export function save(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+/**
+ * Split comma-separated values into trimmed array
+ * @param {string} str
+ * @returns {string[]}
+ */
+function parseCSV(str) {
+  return str.split(",").map(s => s.trim()).filter(Boolean);
 }
 
-export function load(key) {
-  try {
-    return JSON.parse(localStorage.getItem(key)) || {};
-  } catch {
-    return {};
-  }
+/**
+ * Show alert message to user
+ * @param {string} msg
+ */
+function showMessage(msg) {
+  alert(msg);
 }
+
 

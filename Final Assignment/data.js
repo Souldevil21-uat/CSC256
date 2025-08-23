@@ -1,26 +1,23 @@
-// data.js — Manages persistent user data using localStorage
+// data.js - Handles localStorage data management
 
-import { save, load } from './utils.js';
+const STORAGE_KEY = "userProfiles";
 
-// Key name for localStorage
-const STORAGE_KEY = "skillswap_data";
-
-// Load existing state or initialize with empty values
-export let state = load(STORAGE_KEY);
-
-if (!state.user) {
-  state.user = {
-    name: "",
-    role: "",
-    skillsOffered: [],
-    skillsWanted: [],
-    availability: []
-  };
-  save(STORAGE_KEY, state);
+/**
+ * Save user profile to localStorage array.
+ * @param {Object} profile - New profile object to store.
+ */
+function saveUserProfile(profile) {
+  const profiles = getUserProfiles();
+  profiles.push(profile);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(profiles));
 }
 
-// Function to update user object and save it
-export function updateUser(data) {
-  state.user = { ...state.user, ...data };
-  save(STORAGE_KEY, state);
+/**
+ * Load all user profiles from storage.
+ * @returns {Object[]} - Array of profiles
+ */
+function getUserProfiles() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
 }
+
